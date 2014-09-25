@@ -1,0 +1,8 @@
+<div class="row">
+<div class="large-12 columns" id="tag_cloud">
+  <h4>Hot Tags</h4>
+  <% tag_cloud Aoh.tag_counts, %w[css1 css2 css3 css4] do |tag, css_class| %>
+  <%= link_to tag.name, tag_path(tag.name), :class => 'small button' %>
+<% end %>
+  </div>
+</div>

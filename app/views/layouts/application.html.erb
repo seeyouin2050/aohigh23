@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Aohigh" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+<div class="off-canvas-wrap fixed" data-offcanvas>
+  <div class="inner-wrap">
+  <div class="fixed">
+    <nav class="tab-bar">
+      <section class="left-small">
+        <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+      </section>
+
+      <section class="middle tab-bar-section">
+        <h1 class="title"><%= link_to 'AOHIGH', root_path %></h1>
+        
+      </section>
+
+      <section class="right-small">
+        <a class="right-off-canvas-toggle menu-icon" href="#"><span></span></a>
+      </section>
+    </nav>
+    </div>
+
+    <aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+        <li><label>Aohigh</label></li>
+        <li><%= render 'form' %></li>
+      </ul>
+    </aside>
+
+    <aside class="right-off-canvas-menu">
+      <ul class="off-canvas-list">
+        <li><label>Aohigh</label></li>
+        <li><a href="#">Hot Tags</a></li>
+        <li><%= link_to 'All Tags', aohs_alltags_path %></li>
+      </ul>
+    </aside>
+<a class="exit-off-canvas"></a>
+
+    <section class="main-section">
+      <!-- content goes here -->
+          <%= yield %>
+
+    </section>
+
+
+  </div>
+</div>
+
+    <%= javascript_include_tag "application" %>
+  </body>
+</html>

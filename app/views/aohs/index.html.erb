@@ -1,0 +1,33 @@
+<div class="testimonial-wrap">
+	<div class="row">
+		<div class="large-12 columns centered-text">
+			<h2>What these awesome people have to say!</h2>
+		</div>
+	</div>
+
+	<div class="row fullwidth">
+    <% @aohs.each do |aoh| %>
+		<div class="medium-3 columns testimonial">
+
+			<div class="quote">
+				<p><%= aoh.status %></p>
+				<hr class="doted">
+				<p><%= raw aoh.tag_list.map{|t| link_to t, tag_path(t)}.join(', ') %></p>
+			</div>
+			<!--<div class="student">
+				<div class="photo"> </div>
+				<p>John Doe</p>
+				<p>Important person, some Company</p>
+			</div>-->
+		</div>
+		<% end %>
+	</div>
+	</div> 
+	<!--<div class="large-3 columns panel" id="tag_cloud">
+  <h4>Hot Tags</h4>
+  <% tag_cloud Aoh.tag_counts, %w[css1 css2 css3 css4] do |tag, css_class| %>
+  <%= link_to tag.name, tag_path(tag.name), :class => css_class %>
+<% end %>
+  </div>-->
+  
+</div>

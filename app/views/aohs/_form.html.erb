@@ -1,0 +1,25 @@
+<%= form_for (@aoh) do |f| %>
+  <% if @aoh.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@aoh.errors.count, "error") %> prohibited this tweet from being saved:</h2>
+
+      <ul>
+      <% @aoh.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <%= f.label :status %><br>
+    <%= f.text_area :status , :placeholder => 'write your mind' %>
+  </div>
+    <div class="row">
+    <%= f.label :tags %><br>
+    <%= f.text_field :tag_list , :placeholder => 'Tags (separated by a comma)' %>
+  </div>
+  <div class="row">
+    <%= f.submit 'Post', :class => 'button' %>
+  </div>
+<% end %>
